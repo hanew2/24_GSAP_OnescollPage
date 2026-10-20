@@ -1,0 +1,441 @@
+@charset "UTF-8";
+@import url("https://db.onlinewebfonts.com/c/2c49c30acea579420e9406fccc391d55?family=Jheri+Curls");
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 50%);
+  z-index: 10;
+  transition: 0.3s ease-in;
+}
+.header_in {
+  max-width: 1400px;
+  margin: auto;
+  height: 80px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+h1 img {
+  width: 60px;
+}
+h1 span {
+  font-family: "Jheri Curls", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+/* .on : 헤더 스크롤 될때 */
+header.on {
+  background: #000;
+  color: #fff;
+}
+
+header.on .header_in {
+  height: 70px;
+}
+header.on h1 img {
+  width: 45px;
+  filter: brightness(0) invert(1);
+}
+header.on h1 span {
+  font-size: 28px;
+}
+header.on nav > ul > li {
+  margin: 0 20px;
+}
+header.on nav > ul > li > a {
+  font-size: 16px;
+}
+header.on .mob_btn span {
+  background: #fff;
+}
+
+/* .on end */
+
+.mob_btn {
+  display: none;
+}
+
+nav {
+}
+nav > ul {
+  display: flex;
+  position: relative;
+}
+nav > ul > li {
+  margin: 0 14px;
+}
+nav > ul > li > a {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+}
+nav > ul > li > a.active {
+  color: #d99ae9;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  background: #efe1ff;
+  transition: 0.3s ease-in;
+  z-index: 999;
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#s1 {
+  background: #cffdff;
+}
+#s2 {
+  background: #eeffcf;
+}
+#s3 {
+  background: #8371c2;
+}
+#s4 {
+  background: #fdcfea;
+}
+#s5 {
+  background: #efe1ff;
+}
+#s6 {
+  background: #ffc894;
+  height: 600px;
+}
+
+h2 {
+  font-family: "Jheri Curls", sans-serif;
+  font-size: clamp(30px, calc(20px + 1vw), 40px); /* 클램프!!! */
+  margin-bottom: 50px;
+}
+
+.btnDown {
+  position: absolute;
+  bottom: 7vh;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 1100px;
+  display: flex;
+  gap: 30px;
+}
+.container figure img {
+  width: 100%;
+}
+
+.btnDown i {
+  font-size: 40px;
+  transition: 0.3s ease-in;
+}
+.btnDown:hover i {
+  transform: translateY(10px);
+  color: #659bff;
+}
+
+#s2 .container {
+  align-items: center;
+}
+#s2 .container .txt {
+  flex: 2;
+}
+#s2 .container figure {
+  flex: 2;
+}
+#s2 p {
+  padding: 0 30px 0 0;
+  color: #464646;
+}
+
+#s3 .container {
+  flex-direction: column;
+  align-items: center;
+  color: azure;
+}
+#s3 .icons ul {
+  display: flex;
+  gap: 30px;
+}
+#s3 .icons li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#s3 i {
+  font-size: 50px;
+  color: #efe1ff;
+}
+
+#s4 h2 {
+  line-height: 1.8;
+}
+#s4 .txt {
+  flex: 1;
+  order: 1;
+}
+.cards {
+  flex: 3;
+  display: flex;
+  gap: 20px;
+}
+.card {
+  flex: 1;
+  height: 300px;
+  border-radius: 8px;
+  background: #efe1ff;
+}
+
+#s5 {
+  color: #718645;
+}
+#s5 .container {
+  align-items: center;
+}
+
+#s5 .container > * {
+  flex: 1;
+}
+#s5 .container figure {
+  text-align: center;
+}
+#s5 .container figure img {
+  width: 80px;
+}
+#s5 .btnDown {
+  color: #fff;
+}
+
+#s6 .container {
+  justify-content: center;
+}
+#s6 .container p {
+  text-align: center;
+}
+
+/* 리모트 버튼 */
+#remote {
+  position: fixed;
+  top: 50%; /*화면의 50%*/
+  left: 50px;
+  transform: translateY(-50%); /*나 자신의 50%*/
+  /* border: 5px solid red; */
+  z-index: 10;
+}
+#remote a {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000;
+  text-indent: -9999px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+#remote a::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*x,y 한 번에 적용. 한가운데로*/
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+#remote a.active {
+  background: rgba(0, 0, 0, 1);
+}
+#remote a.active::after {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 1200px) {
+  section {
+    padding: 70px 20px 130px;
+  }
+  .btnDown {
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+  .header_in {
+    width: 100%;
+    height: 70px;
+  }
+  h1 img {
+    width: 45px;
+  }
+
+  /* 햄버거 버튼 */
+  .mob_btn {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .mob_btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    text-indent: -9999px;
+    background: #000;
+    transition:
+      top 0.3s 0.3s ease-out,
+      transform 0.3s ease-out;
+  }
+  .mob_btn span:nth-child(1) {
+    top: 0;
+  }
+  .mob_btn span:nth-child(2) {
+    top: 9px;
+  }
+  .mob_btn span:nth-child(3) {
+    top: 18px;
+  }
+
+  /* 열렸을 때 X 모양 (header에 mOpen이 붙는다는 전제) */
+  .mOpen .header_in {
+    background: #fff;
+    color: #000;
+  }
+
+  .mOpen .mob_btn span {
+    transition:
+      top 0.3s ease-out,
+      transform 0.3s 0.3s ease-out;
+    transform: rotate(135deg);
+    background: #000;
+  }
+  .mOpen .mob_btn span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+    background: #000;
+  } /*햄버거버튼 돌아가게*/
+  .mOpen .mob_btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .mOpen .mob_btn span:nth-child(3) {
+    top: 9px;
+    transform: rotate(225deg);
+    background: #000;
+  } /*햄버거버튼 돌아가게. 각도 45에 몇배 곱하면 더 돌아가는 것*/
+
+  /* 메뉴 */
+  nav {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.5s ease-out;
+    z-index: -1;
+  }
+  .mOpen nav {
+    transform: translateY(0);
+    height: calc(100% - 70px); /*이게 있어야 팝업이 제대로 내려옴*/
+    border-top: 1px solid #ececec;
+  }
+
+  nav > ul {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+  nav > ul > li {
+    margin: 0 20px;
+    border-bottom: 1px solid #b3b3b3;
+  }
+  nav > ul > li > a,
+  header.on nav > ul > li > a {
+    font-size: 24px;
+    line-height: 80px; /* li 높이와 똑같이 */
+  }
+  .bar,
+  #remote {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  #s2 .container,
+  #s4 .container,
+  #s5 .container {
+    flex-direction: column;
+  }
+  #s2 .container figure {
+    width: 60%;
+  }
+  .btnDown i {
+    font-size: 40px;
+  }
+  #s4 h2 {
+    margin-bottom: 10px;
+  }
+  #s4 .txt {
+    order: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 20px 70px;
+  }
+  .btnDown {
+    display: none;
+  }
+  #s3 .icons {
+    width: 100%;
+  }
+  #s3 .icons ul {
+    justify-content: space-between;
+    gap: unset;
+  }
+  .card {
+    height: 240px;
+  }
+}
